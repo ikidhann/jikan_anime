@@ -31,9 +31,31 @@ dependencies:
   flutter:
     sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  bloc: ^9.0.0
+  bloc_concurrency: ^0.3.0
+  bloc_test: ^10.0.0
+  cached_network_image: ^3.2.3
   cupertino_icons: ^1.0.8
+  dio:
+  equatable: ^2.0.5
+  flutter_animate: ^4.2.0
+  flutter_bloc: ^9.1.0
+  flutter_localizations:
+    sdk: flutter
+  flutter_mobx: ^2.0.6+5
+  flutter_riverpod: ^2.3.6
+  get_it: ^7.6.0
+  get_it_mixin: ^4.2.0
+  google_fonts: ^6.2.1
+  intl: any
+  material_color_utilities: ^0.11.1
+  provider: ^6.0.5
+  shared_preferences: ^2.1.2
+  stream_transform: ^2.1.0
+  mobx: ^2.2.1
+  meta: ^1.9.1
+  flutter_dotenv: ^5.0.2
+  dartz:
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +67,11 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  test: ^1.24.1
+  mocktail: ^1.0.3
+  mockingjay: ^1.0.0
+  build_runner: ^2.3.3
+  mobx_codegen: ^2.1.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -58,9 +85,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - .env
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
