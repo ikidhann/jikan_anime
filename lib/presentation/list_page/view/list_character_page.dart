@@ -28,7 +28,7 @@ class CharacterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final status = context.select((ListCharacterCubit c) => c.state.status);
-    return status == ListCharacterStatus.initial
+    return status == ListCharacterStatus.initial || status == ListCharacterStatus.loading
         ? const Center(child: CircularProgressIndicator())
         : const Content();
   }
