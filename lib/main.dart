@@ -7,16 +7,19 @@ import 'package:jikan_anime/data/source/network/api.dart';
 import 'package:jikan_anime/data/source/network/network_config.dart';
 import 'package:jikan_anime/domain/usecase/anime_character/get_anime_characters_by_id.dart';
 import 'package:jikan_anime/presentation/list_page/view/list_character_page.dart';
+import 'package:jikan_anime/service_locator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-late SharedPreferences sharedPreferences;
+// late SharedPreferences sharedPreferences;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load(fileName: ".env");
   await initNetwork();
-  sharedPreferences = await SharedPreferences.getInstance();
+  await initializeDependencies();
+
+  // sharedPreferences = await SharedPreferences.getInstance();
 
   runApp(ProviderScope(child: AppRoot()));
 }
@@ -29,17 +32,17 @@ class AppRoot extends StatefulWidget {
 }
 
 class _AppRootState extends State<AppRoot> {
-  late GetAnimeCharacters _getAnimeCharacters;
+  // late GetAnimeCharacters _getAnimeCharacters;
 
   @override
   void initState() {
     super.initState();
 
-    final api = ApiImpl();
-    final localStorage = LocalStorageImpl(sharedPreferences: sharedPreferences);
-    final repository = CharacterRepositoryImpl(api: api, localStorage: localStorage);
-
-    _getAnimeCharacters = GetAnimeCharacters(repository: repository);
+    // final api = ApiImpl();
+    // final localStorage = LocalStorageImpl(sharedPreferences: sharedPreferences);
+    // final repository = CharacterRepositoryImpl(api: api, localStorage: localStorage);
+    //
+    // _getAnimeCharacters = GetAnimeCharacters(repository: repository);
   }
 
   @override
@@ -60,7 +63,7 @@ class _AppRootState extends State<AppRoot> {
               ],
             ),
             body: RepositoryProvider.value(
-              value: _getAnimeCharacters,
+              value: sl<GetAnimeCharacters>(),
               child: const ListCharacterPage(),
             ),
           );
