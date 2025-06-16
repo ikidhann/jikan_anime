@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "563504189667",
+    "project_id": "jikan-anime-d5c77",
+    "storage_bucket": "jikan-anime-d5c77.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563504189667:android:c6b7f85eb0dbc05f57b5d6",
+        "android_client_info": {
+          "package_name": "com.example.jikan_anime"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhRgSm07Wwl7jd7txD1emvwJe9WfzCQgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

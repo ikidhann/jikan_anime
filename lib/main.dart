@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,6 +12,8 @@ import 'package:jikan_anime/service_locator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'firebase_options.dart';
+
 // late SharedPreferences sharedPreferences;
 
 void main() async {
@@ -18,6 +21,10 @@ void main() async {
   await dotenv.load(fileName: ".env");
   await initNetwork();
   await initializeDependencies();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   // sharedPreferences = await SharedPreferences.getInstance();
 
